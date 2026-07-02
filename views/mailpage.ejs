@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send Email : NodeJS</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <!-- Decorative background elements -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="app-container">
+    <main class="mail-card">
+      <header class="mail-header">
+        <div class="header-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </svg>
+        </div>
+        <h1>Send an Email</h1>
+        <p>Compose and dispatch emails quickly using NodeJS & Nodemailer</p>
+      </header>
+
+      <form action="/send-email" method="post" class="mail-form">
+        <div class="form-group">
+          <label for="to" class="form-label">Recipient Email</label>
+          <div class="input-wrapper">
+            <input type="email" id="to" name="to" class="form-input" placeholder="e.g. recipient@example.com" required />
+            <span class="focus-border"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <div class="input-wrapper">
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this email about?" required />
+            <span class="focus-border"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="text" class="form-label">Message</label>
+          <div class="input-wrapper">
+            <textarea id="text" name="text" class="form-input form-textarea" placeholder="Type your message here..." rows="5" required></textarea>
+            <span class="focus-border"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span>Send Message</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="btn-arrow">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </form>
+    </main>
+  </div>
+</body>
+
+</html>
