@@ -13,8 +13,8 @@ app.set("view engine", "ejs");
 
 const transporter = nodemailer.createTransport({
   // SMTP configuration
-  host: process.env.SMTP_HOST || "smtp.gmail.com", // SMTP server host
-  port: Number(process.env.SMTP_PORT) || 587, // SMTP server port
+  host: process.env.SMTP_HOST, // SMTP server host
+  port: Number(process.env.SMTP_PORT), // SMTP server port
   secure: false, // Use TLS
   auth: {
     // Authentication credentials
@@ -31,7 +31,7 @@ app.post("/send-email", async (req, res) => {
 
   try {
     const info = await transporter.sendMail({
-      from: '"Nikhil Saini" <memetoonstudios@gmail.com>',
+      from: `"Nikhil Saini" <${process.env.SMTP_USER}>`,
       to: to,
       subject: subject,
       text: text,
